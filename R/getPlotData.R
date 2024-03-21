@@ -37,8 +37,6 @@
 #'   geom_line(data = retVal$plotFits, mapping = aes(x = Time, y = Conc)) +
 #'   facet_wrap(~ Herbicide)
 #'
-#' @export
-#'
 getPlotData <- function (obj, ...) UseMethod("getPlotData")
 
 #' @rdname getPlotData
