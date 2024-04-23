@@ -1,10 +1,10 @@
-#' Logistic functions
+#' Logistic equations
 #'
 #' These functions provide the logistic equations with 4 (L4.fun), 3 (L3.fun)
 #' and 2 (L2.fun) parameters with self-starter for the \code{\link{nls}}
-#' function (NLS.L4, NLS.L3 and NLS.2) and the self-starter for logistic
+#' function (NLS.L4, NLS.L3 and NLS.L2) and the self-starter for logistic
 #' function with two parameters for the \code{\link{drm}} function in the
-#' drc package.
+#' drc package (DRC.L2).
 #'
 #'
 #' @name SSL
@@ -14,7 +14,7 @@
 #' @aliases NLS.L4
 #' @aliases NLS.L3
 #' @aliases NLS.L2
-#' @aliases L.2
+#' @aliases DRC.L2
 #'
 #' @usage L4.fun(predictor, b, c, d, e)
 #' L3.fun(predictor, b, d, e)
@@ -22,7 +22,7 @@
 #' NLS.L4(predictor, b, c, d, e)
 #' NLS.L3(predictor, b, d, e)
 #' NLS.L2(predictor, b, e)
-#' L.2(upper = 1, fixed = c(NA, NA), names = c("b", "e"))
+#' DRC.L2(upper = 1, fixed = c(NA, NA), names = c("b", "e"))
 #'
 #'
 #' @param predictor a numeric vector of values at which to evaluate the model
@@ -41,8 +41,8 @@
 #' for the 3- and 2-parameter model c is equal to 0, while for the 2-parameter model
 #' d is equal to 1.
 
-#' @return  L4.fun, L3.fun, L2.fun, NLs.L4, NLS.L3 and NLS.L2 return a numeric value,
-#' while L.2 returns a list containing the nonlinear function, the self starter function
+#' @return  L4.fun, L3.fun, L2.fun, NLS.L4, NLS.L3 and NLS.L2 return a numeric value,
+#' while DRC.L2 returns a list containing the nonlinear function, the self starter function
 #' and the parameter names.
 #'
 #' @author Andrea Onofri
@@ -50,7 +50,7 @@
 #' @examples
 #' data(beetGrowth)
 #' mod3 <- nls(weightInf ~ NLS.L3(DAE, b, c, d), data = beetGrowth)
-#' mod3b <- drm(weightInf ~ DAE, fct=L.2(upper = 25), data = beetGrowth)
+#' mod3b <- drm(weightInf ~ DAE, fct=DRC.L2(upper = 25), data = beetGrowth)
 
 
 # Logistic Function for bioassay work nlsL.4
@@ -127,7 +127,7 @@ L2.Init <- function(mCall, LHS, data, ...) {
 NLS.L2 <- selfStart(L2.fun, L2.Init, parameters=c("b", "e"))
 
 # Logistic curve with two-parameters (DRC) ##########################
-"L.2" <-
+"DRC.L2" <-
   function (upper = 1, fixed = c(NA, NA), names = c("b", "e"))
   {
     numParm <- 2

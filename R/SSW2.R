@@ -7,7 +7,7 @@
 #' for the \code{\link{nls}} function (NLS.W2.4(), NLS.W2.3() and NLS.W2.2()
 #'
 #'
-#' @name SSW1
+#' @name SSW2
 #' @aliases W2.4.fun
 #' @aliases W2.3.fun
 #' @aliases W2.2.fun
@@ -45,9 +45,11 @@
 #'
 #' @examples
 #' library(statforbiology)
-#' WeedDens <- c(0, 5, 10, 20, 25)
-#' YieldLoss <- c(0, 17.9, 21.5, 27.4, 29.5)
-#'
+#' dataset <- getAgroData("brassica")
+#' model <- nls(FW ~ NLS.W2.4(Dose, b, c, d, e), data = dataset)
+#' model <- nls(FW ~ NLS.W2.3(Dose, b, d, e), data = dataset)
+#' model <- nls(FW/max(FW) ~ NLS.W2.2(Dose, b, e), data = dataset)
+#' summary(model)
 #'
 # Weibul type II Function for bioassay work nlsW2.4
 # Edited on 07/02/2020

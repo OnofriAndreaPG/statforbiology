@@ -12,7 +12,7 @@ Depends:
     R (>= 3.5),
     drc
 Imports:
-    ggplot2, tidyr, car, nlme,
+    ggplot2, tidyr, car, nlme, emmeans, methods, MASS,
     stats, drcte, multcomp, utils, multcompView
 Encoding: UTF-8
 RoxygenNote: 7.3.1

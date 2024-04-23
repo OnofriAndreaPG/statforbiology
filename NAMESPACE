@@ -5,27 +5,29 @@ importFrom("car", "deltaMethod")
 # importFrom("plyr", "ldply", "ddply")
 importFrom("multcomp", "glht", "adjusted")
 importFrom("multcompView", "multcompLetters3", "multcompLetters")
-# importFrom("MASS", "boxcox")
-importFrom("nlme", "fixef") # "gls", "lme", "varIdent"
-# importFrom("emmeans", "emmeans")
-importFrom("utils", "read.csv") # "combn", "unstack")
+importFrom("MASS", "boxcox")
+importFrom("nlme", "fixef", "gls", "varIdent", "varPower", "varExp") # "lme",
+importFrom("emmeans", "emmeans")
+importFrom("utils", "read.csv", "unstack") # "combn")
 importFrom("ggplot2", "ggplot")
 importFrom("stats", "aggregate", "predict",
            "deviance", "df.residual", "qqline", "qqnorm",
            "residuals", "weights", "as.formula", "fitted", "lm",
            "coef", "sortedXyData", "NLSstRtAsymptote",
-           "pt", "vcov", "p.adjust"
-#           "filter", "anova", "aov", "as.formula",
-#           "coef", "cor", "deviance", "df.residual", "fitted",
-#           "formula", "gaussian", "glm", "lm", "logLik", "manova",
-#            "nls", "pchisq", "pf", "predict",
-#            "qchisq", "qqline", "qqnorm", "residuals", "sd",
-#            "update", "weights"
+           "pt", "vcov", "p.adjust", "nls",
+           "anova", "pf", "aov", "cor", "manova", "sd",
+           "formula", "logLik", "pchisq", "qchisq", "update",
+           "filter" # "as.formula",
+#           "coef",  "deviance", "df.residual", "fitted",
+#            "gaussian", "glm", "lm",
+#           , "predict",
+#            "qqline", "qqnorm", "residuals",
+#            , "weights"
           )
 importFrom("grDevices", "dev.cur", "extendrange")
 importFrom("graphics", "abline", "curve", "par", "points", "segments",
                 "text")
-# importFrom("methods", "is")
+importFrom("methods", "is")
 
 export(
   # Support for nls and drc
@@ -37,27 +39,29 @@ export(
        asymReg.fun, NLS.asymReg, DRC.asymReg, DRC.SSasymp,
        negExp.fun, NLS.negExp, DRC.negExp,
        YL.fun, NLS.YL, DRC.YL,
-       # cousens85.fun, DRC.cousens85,
+       cousens85.fun, NLS.cousens85, DRC.cousens85,
        powerCurve.fun, NLS.powerCurve, DRC.powerCurve,
        logCurve.fun, NLS.logCurve, DRC.logCurve,
-       L4.fun, NLS.L4, L3.fun, NLS.L3, L2.fun, NLS.L2, L.2,
-       # G4.fun, NLS.G4, G3.fun, NLS.G3, G2.fun, NLS.G2,
-       # E4.fun, NLS.E4, E3.fun, NLS.E3, E2.fun, NLS.E2,
-       # E.4, E.3, E.2,
-       # LL4.fun, NLS.LL4, LL3.fun, NLS.LL3, LL2.fun, NLS.LL2,
+       L4.fun, NLS.L4, L3.fun, NLS.L3, L2.fun, NLS.L2, DRC.L2,
+       G4.fun, NLS.G4, G3.fun, NLS.G3, G2.fun, NLS.G2,
+       E4.fun, NLS.E4, E3.fun, NLS.E3, E2.fun, NLS.E2,
+       DRC.E4, DRC.E3, DRC.E2,
+       LL4.fun, NLS.LL4, LL3.fun, NLS.LL3, LL2.fun, NLS.LL2,
        W1.4.fun, NLS.W1.4, W1.3.fun, NLS.W1.3, W1.2.fun, NLS.W1.2,
        W2.4.fun, NLS.W2.4, W2.3.fun, NLS.W2.3, W2.2.fun, NLS.W2.2,
        # BC.5.fun, BC.4.fun, BC.3.fun,
-       # beta.fun, DRC.beta, NLS.beta,
+       beta.fun, DRC.beta, NLS.beta,
        bragg.3.fun, NLS.bragg.3, DRC.bragg.3,
        bragg.4.fun, NLS.bragg.4, DRC.bragg.4,
        lorentz.3.fun, NLS.lorentz.3, DRC.lorentz.3,
        lorentz.4.fun, NLS.lorentz.4, DRC.lorentz.4,
+       # hill.fun, NLS.hill, DRC.hill,
        # triangle.fun,
        # utilities for ANOVA models
-       # anova.aovlist, check.hom,
+       check.hom, # anova.aovlist,
        # utilities for METs
-       # AMMI, GGE, CVA, biplot.AMMIobject, biplot.GGEobject,
+       AMMI, GGE, CVA,
+       # biplot.AMMIobject, biplot.GGEobject,
        # biplot.polygon,
        # JointRegr, JointRegrM,
        # stability.met, summary.met,
@@ -65,17 +69,17 @@ export(
        getPlotData, R2nls, plot.nls, # boxcox.nls,
        # summary.nlsbc,
        pairComp, gnlht, compCoefs, #,  deviance.drc,
-       # compCurves, compCurves.2,
+       compCurves, # compCurves.2,
        ## meta-analysis
        # getTau, # myMet,
-       ## Other
-       getData #, tukeyMat, angularTransform, ma
+       ## Other utilities
+       getAgroData, ma, angularTransform, contr.Tukey
        )
 ## S3 methods
-# S3method(deviance, drc)
-# S3method(boxcox, nls)
-# S3method(summary, nlsbc)
-# S3method(anova, aovlist)
+S3method(deviance, drc)
+S3method(boxcox, nls)
+S3method(summary, nlsbc)
+S3method(anova, aovlist)
 S3method(gnlht, lm)
 S3method(gnlht, nls)
 S3method(gnlht, lme)
@@ -83,8 +87,8 @@ S3method(gnlht, nlme)
 S3method(gnlht, drc)
 S3method(gnlht, numeric)
 S3method(plot, nls)
-# S3method(biplot, AMMIobject)
-# S3method(biplot, GGEobject)
+S3method(biplot, AMMIobject)
+S3method(biplot, GGEobject)
 S3method(getPlotData, drc)
 S3method(getPlotData, nls)
 S3method(getPlotData, drcte)

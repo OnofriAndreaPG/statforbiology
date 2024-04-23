@@ -45,8 +45,11 @@
 #'
 #' @examples
 #' library(statforbiology)
-#' WeedDens <- c(0, 5, 10, 20, 25)
-#' YieldLoss <- c(0, 17.9, 21.5, 27.4, 29.5)
+#' dataset <- getAgroData("brassica")
+#' model <- nls(FW ~ NLS.W1.4(Dose, b, c, d, e), data = dataset)
+#' model.2 <- nls(FW ~ NLS.W1.3(Dose, b, d, e), data = dataset)
+#' model.3 <- nls(FW/max(FW) ~ NLS.W1.2(Dose, b, e), data = dataset)
+#' summary(model)
 #'
 #'
 # Weibul type 1 Function for bioassay work

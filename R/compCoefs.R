@@ -1,17 +1,17 @@
-compCoefs <- function (object, parameterNames, operator = "-", 
-                       display = "pairwise", 
+compCoefs <- function (object, parameterNames, operator = "-",
+                       display = "pairwise",
                        adjust = "holm", reversed = FALSE, level = 0.05,
                        Letters = c(letters, LETTERS)) {
   # Make pairwise comparisons based on a 'vector of means'nls' object.
-  # It is shaped after the drc::compParm function and depends only on 
+  # It is shaped after the drc::compParm function and depends only on
   # multcompView. Adjustments for multiplicity are possible, using the
   # p.adjust method. Holm is the default
   # Updated on 19/05/2023
-  
+
   if(!inherits(object, "nls")) stop("This function only works on 'nls' objects")
   # object <- modNlin
   # parameterNames <- pn
-  
+
   # Retrieve model information
   nams <- names(object$m$getPars())
   selectedCoefs <- nams %in% parameterNames
@@ -19,18 +19,18 @@ compCoefs <- function (object, parameterNames, operator = "-",
   if (lenPV < 2) {
     stop("No parameters to compare were found")
   }
-  
+
   strVal <- factor(parameterNames, levels = as.character(parameterNames))
   parm <- coef(object)[selectedCoefs]
   varMat <- vcov(object)[selectedCoefs, selectedCoefs]
   df.residual <- df.residual(object)
-  
+
   # Sort the vectors/matrices (so that letters are in 'traditional' order)
   tmp <- data.frame(parm=parm, strVal=strVal)
   if(!reversed) varMat <- varMat[order(parm), order(parm)] else varMat <- varMat[order(parm, decreasing = TRUE), order(parm, decreasing = TRUE) ]
   if(!reversed) tmp <- tmp[order(parm), ] else tmp <- tmp[order(parm, decreasing = TRUE), ]
   parm <- tmp$parm; presentVec <- tmp$strVal # for better re-using the code in compParm()
-  
+
   if (identical(operator, "/")) {
     hypVal <- 1
     fct <- function(ind) {
@@ -71,18 +71,18 @@ compCoefs <- function (object, parameterNames, operator = "-",
       tVal <- (cpMat[k, 1] - hypVal)/cpMat[k, 2]
       cpMat[k, 3] <- tVal
       cpMat[k, 4] <- pFct(-abs(tVal)) + (1 - pFct(abs(tVal)))
-      compParm[k] <- paste(strParm[ind], 
+      compParm[k] <- paste(strParm[ind],
                            collapse = operator)
       k <- k + 1
     }
   }
   cpMat <- data.frame(cpMat)
   row.names(cpMat) <- compParm
-  colnames(cpMat) <- c("Estimate", "Std. Error", 
+  colnames(cpMat) <- c("Estimate", "Std. Error",
                        "t-value", "p-value")
   adjusted.P <- p.adjust(cpMat$`p-value`, method = as.character(adjust))
   cpMat$`p-value` <- as.vector(adjusted.P)
-  
+
   if(display == "pairwise"){
     return(cpMat)
   } else {
@@ -94,12 +94,12 @@ compCoefs <- function (object, parameterNames, operator = "-",
    # Letters <- multcompView::multcompLetters3("parNam", "obj", p.logic,
    #                 data = tmp, reverse = F,
    #                 threshold = level)
-   Letters <- multcompView::multcompLetters(p.logic, threshold = level,
+    Letters <- multcompView::multcompLetters(p.logic, threshold = level,
                                        Letters = Letters, reversed = F)
    parMat <- data.frame(Value = parm, SE = sqrt(diag(varMat)))
    row.names(parMat) <- presentVec
    # parMat <- parMat[order(-parMat$Value),]
-    # } 
+    # }
     # else {
     #    # Letters <- multcompView::multcompLetters3("parNam", "obj", p.logic,
     #    #                 data = tmp, reverse = T,
@@ -111,7 +111,7 @@ compCoefs <- function (object, parameterNames, operator = "-",
     #    parMat <- parMat[order(-parMat$Value),]
     # }
    parMat$CLD = as.character(Letters$Letters)
-  
+
   if(reversed == F) { parMat <- parMat[order(parMat$Value), ]
   } else {parMat <- parMat[order(-parMat$Value), ] }
    return(parMat)

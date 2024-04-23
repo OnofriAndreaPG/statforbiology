@@ -8,8 +8,8 @@
 \alias{NLS.L4}
 \alias{NLS.L3}
 \alias{NLS.L2}
-\alias{L.2}
-\title{Logistic functions}
+\alias{DRC.L2}
+\title{Logistic equations}
 \usage{
 L4.fun(predictor, b, c, d, e)
 L3.fun(predictor, b, d, e)
@@ -17,7 +17,7 @@ L2.fun(predictor, b, e)
 NLS.L4(predictor, b, c, d, e)
 NLS.L3(predictor, b, d, e)
 NLS.L2(predictor, b, e)
-L.2(upper = 1, fixed = c(NA, NA), names = c("b", "e"))
+DRC.L2(upper = 1, fixed = c(NA, NA), names = c("b", "e"))
 }
 \arguments{
 \item{predictor}{a numeric vector of values at which to evaluate the model}
@@ -37,16 +37,16 @@ L.2(upper = 1, fixed = c(NA, NA), names = c("b", "e"))
 \item{names}{names. A vector of character strings giving the names of the parameters. The default is reasonable.}
 }
 \value{
-L4.fun, L3.fun, L2.fun, NLs.L4, NLS.L3 and NLS.L2 return a numeric value,
-while L.2 returns a list containing the nonlinear function, the self starter function
+L4.fun, L3.fun, L2.fun, NLS.L4, NLS.L3 and NLS.L2 return a numeric value,
+while DRC.L2 returns a list containing the nonlinear function, the self starter function
 and the parameter names.
 }
 \description{
 These functions provide the logistic equations with 4 (L4.fun), 3 (L3.fun)
 and 2 (L2.fun) parameters with self-starter for the \code{\link{nls}}
-function (NLS.L4, NLS.L3 and NLS.2) and the self-starter for logistic
+function (NLS.L4, NLS.L3 and NLS.L2) and the self-starter for logistic
 function with two parameters for the \code{\link{drm}} function in the
-drc package.
+drc package (DRC.L2).
 }
 \details{
 The logistic equation is parameterised as:
@@ -57,7 +57,7 @@ d is equal to 1.
 \examples{
 data(beetGrowth)
 mod3 <- nls(weightInf ~ NLS.L3(DAE, b, c, d), data = beetGrowth)
-mod3b <- drm(weightInf ~ DAE, fct=L.2(upper = 25), data = beetGrowth)
+mod3b <- drm(weightInf ~ DAE, fct=DRC.L2(upper = 25), data = beetGrowth)
 }
 \author{
 Andrea Onofri

@@ -48,7 +48,7 @@
 #' @references Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/}
 #'
 #' @examples
-#' dataset <- getData(("speciesArea"))
+#' dataset <-getAgroData("speciesArea")
 #'
 #' #nls fit
 #' model <- nls(numSpecies ~ NLS.powerCurve(Area, a, b),

@@ -50,7 +50,7 @@ up and Y decreases as X increases. Otherwise, if b > 1, the curve is
 concave up and Y increases as X increases.
 }
 \examples{
-dataset <- getData(("speciesArea"))
+dataset <- getAgroData("speciesArea")
 
 #nls fit
 model <- nls(numSpecies ~ NLS.powerCurve(Area, a, b),
