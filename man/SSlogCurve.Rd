@@ -8,7 +8,7 @@
 \title{Logarithmic curve}
 
 \description{
-These functions provide the logarithmic model (logCurve) with self-starter for the \code{\link{nls}} function and for the \code{\link{drm}} function in the drc package.
+These functions provide the logarithmic model (logCurve) with self-starter for the \code{\link{nls}} function and for the \code{\link[drc]{drm}} function in the drc package.
 }
 
 \usage{
@@ -31,7 +31,7 @@ These functions provide the logarithmic model (logCurve) with self-starter for t
   \deqn{ f(x) = a + b \log (X) }
   This curve crosses the X axis at X = a. We can force it through the origin by setting a = 0; this is possible by setting 'fixed = c(=, NA), while, in the 'nls()' function, we need to use the NLS.logCurveNI()' function.
 }
-  
+
 \value{
   logCurve.fun, NLS.logCurve and NLS.logCurveNI return a numeric value, while DRC.logCurve returns a list containing the nonlinear function, the self starter function and the parameter names.
 }
@@ -39,12 +39,12 @@ These functions provide the logarithmic model (logCurve) with self-starter for t
 \references{
 Ratkowsky, DA (1990) Handbook of nonlinear regression models. New York (USA): Marcel Dekker Inc.
 
-Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/} 
+Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/}
 }
 
 \author{Andrea Onofri}
 
-\note{DRC.logCurve() is for use with the function \code{\link{drm}}.}
+\note{DRC.logCurve() is for use with the function \code{\link[drc]{drm}}.}
 
 \examples{
 X <- c(1,2,4,5,7,12)

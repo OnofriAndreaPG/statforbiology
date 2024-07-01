@@ -36,7 +36,7 @@ derived from the yield-loss function, and contains parameters that are revelant 
 competition studies. These functions provide the
 equation (cousens85.fun), the self-starters for the \code{\link{nls}}
 function (NLS.cousens85) and the self-starters for
-the \code{\link{drm}} function in the drc package (DRC.cousens85)
+the \code{\link[drc]{drm}} function in the drc package (DRC.cousens85)
 }
 \details{
 This equation is parameterised as:

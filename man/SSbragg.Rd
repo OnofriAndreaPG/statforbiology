@@ -40,7 +40,7 @@ a minimum and inflection points. These functions provide the
 equations with 4 (bragg.4.fun) and 3 (bragg.3.fun) parameters
 with self-starters for the \code{\link{nls}}
 function (NLS.bragg.4, NLS.bragg.3) and the self-starters for
-the \code{\link{drm}} function in the drc package (DRC.bragg.4, DRC.bragg.3)
+the \code{\link[drc]{drm}} function in the drc package (DRC.bragg.4, DRC.bragg.3)
 }
 \details{
 The Bragg's equation is parameterised as:

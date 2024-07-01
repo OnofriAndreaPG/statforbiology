@@ -33,7 +33,7 @@ no inflection points. These functions provide the
 equation (YL.fun), the equation
 with self-starters for the \code{\link{nls}}
 function (NLS.YL) and equation with self-starters for
-the \code{\link{drm}} function in the drc package (DRC.YL)
+the \code{\link[drc]{drm}} function in the drc package (DRC.YL)
 }
 \details{
 The Yield-loss equation is parameterised as:

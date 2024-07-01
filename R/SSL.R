@@ -3,7 +3,7 @@
 #' These functions provide the logistic equations with 4 (L4.fun), 3 (L3.fun)
 #' and 2 (L2.fun) parameters with self-starter for the \code{\link{nls}}
 #' function (NLS.L4, NLS.L3 and NLS.L2) and the self-starter for logistic
-#' function with two parameters for the \code{\link{drm}} function in the
+#' function with two parameters for the \code{\link[drc]{drm}} function in the
 #' drc package (DRC.L2).
 #'
 #'

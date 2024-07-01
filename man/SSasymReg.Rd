@@ -31,9 +31,9 @@ These functions provide the asymptotic regression model (asymReg), the asymptoti
   \deqn{ f(x) = \textrm{plateau} - (\textrm{plateau} - \textrm{init}) \cdot \exp (- m x ) }
   A similar parameterisation where 'm' is replaced by exp(lrc) is provided in the 'nlme' package, with self-starter for the 'nls' function. Here, we provide the self-starter for the 'drm' function in the 'drc' package:
   \deqn{ f(x) = \textrm{Asym} + (\textrm{R0} - \textrm{Asym}) \cdot \exp [- exp(lrc) x ] }
-  
+
   }
-  
+
 \value{
   asymReg.fun and NLS. asymReg return a numeric value, while DRC.asymReg and DRC.SSasymp return a list containing the nonlinear function, the self starter function and the parameter names.
 }
@@ -41,12 +41,12 @@ These functions provide the asymptotic regression model (asymReg), the asymptoti
 \references{
 Ratkowsky, DA (1990) Handbook of nonlinear regression models. New York (USA): Marcel Dekker Inc.
 
-Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/} 
+Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/}
 }
 
 \author{Andrea Onofri}
 
-\note{DRC.asymReg and DRC.SSasymp are for use with the function \code{\link{drm}}.}
+\note{DRC.asymReg and DRC.SSasymp are for use with the function \code{\link[drc]{drm}}.}
 
 \examples{
 X <- c(1, 3, 5, 7, 9, 11, 13, 20)

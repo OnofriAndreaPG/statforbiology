@@ -7,7 +7,7 @@
 #' (Muller-Dumbois method). These functions provide the equation
 #' ('powerCurve.fun()') as well as the self-starters
 #' for the \code{\link{nls}} function ( 'NLS.powerCurve()' ) and for the
-#' \code{\link{drm}} function in the 'drc' package ('DRC.powerCurve()')
+#' \code{\link[drc]{drm}} function in the 'drc' package ('DRC.powerCurve()')
 #'
 #'
 #' @name SSpowerCurve

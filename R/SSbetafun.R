@@ -7,7 +7,7 @@
 #' as a function of temperature. These functions provide the
 #' equation (beta.fun), the self-starters for the \code{\link{nls}}
 #' function (NLS.beta) and the self-starters for
-#' the \code{\link{drm}} function in the drc package (DRC.beta)
+#' the \code{\link[drc]{drm}} function in the drc package (DRC.beta)
 #'
 #'
 #' @name SSbeta

@@ -9,7 +9,7 @@
 \title{Negative exponential functions}
 
 \description{
-These functions provide the negative exponential model (negExp.fun) with the related self-starters for the \code{\link{nls}} function (NLS.negExp)  \code{\link{drm}} function in the 'drc' package (DRC.negExp) and the exponential cumulative distribution function (negExpDist.fun), with self-starters for both 'nls' (NLS.negExpDist) and 'drc' (DRC.negExpDist).
+These functions provide the negative exponential model (negExp.fun) with the related self-starters for the \code{\link{nls}} function (NLS.negExp)  \code{\link[drc]{drm}} function in the 'drc' package (DRC.negExp) and the exponential cumulative distribution function (negExpDist.fun), with self-starters for both 'nls' (NLS.negExpDist) and 'drc' (DRC.negExpDist).
 }
 
 \usage{

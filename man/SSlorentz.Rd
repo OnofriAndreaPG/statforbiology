@@ -37,7 +37,7 @@ the nonlinear function, the self starter function and the parameter names.
 These functions provide the Lorentz equation with 3 and 4 parameters ('lorentz.3.fun()'
 and 'lorentz.4.fun()' ), as well as the self-starters for the \code{\link{nls}}
 function ( 'NLS.lorentz.3()' and 'NLS.lorentz.4()') and for the
-\code{\link{drm}} function in the 'drc' package ('DRC.lorentz.3()' and 'DRC.lorentz.4()')
+\code{\link[drc]{drm}} function in the 'drc' package ('DRC.lorentz.3()' and 'DRC.lorentz.4()')
 }
 \details{
 These functions provide the Lorentz equation, that is a bell-shaped

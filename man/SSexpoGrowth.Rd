@@ -40,7 +40,7 @@ Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. 
 
 \author{Andrea Onofri}
 
-\note{DRC.expoGrowth() is for use with the function \code{\link{drm}}.}
+\note{DRC.expoGrowth() is for use with the function \code{\link[drc]{drm}}.}
 
 \examples{
 library(statforbiology)

@@ -46,7 +46,7 @@ the self starter function and the parameter names.
 \description{
 These functions provide the modified Gompertz equations with 4 (E4.fun), 3 (E3.fun)
 and 2 (E2.fun) parameters with self-starter for the \code{\link{nls}}
-function (NLS.E4, NLS.E3 and NLS.E2) and for the \code{\link{drm}} function
+function (NLS.E4, NLS.E3 and NLS.E2) and for the \code{\link[drc]{drm}} function
 in the 'drc' package (DRC.E4, DRC.E3 and DRC.E2).
 }
 \details{
