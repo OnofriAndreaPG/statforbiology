@@ -1,10 +1,10 @@
 Package: statforbiology
 Type: Package
-Title: Tools for data analyses in biology 
-Version: 0.1.0
+Title: Tools for Data Analyses in Biology 
+Version: 0.9.9
 Author: Andrea Onofri <andrea.onofri@unipg.it>
 Maintainer: Andrea Onofri <andrea.onofri@unipg.it>
-Description: This package is associated to the blog 'Fixing the bridge between biologists and statisticians" and contains several tools for nonlinear regression analyses and general data analysis in biology and agriculture. Several datasets are also included for practicing and teaching purposes.
+Description: It is associated to the blog 'Fixing the bridge between biologists and statisticians" and contains several tools for nonlinear regression analyses and general data analysis in biology and agriculture. Several datasets are also included for practicing and teaching purposes.
 License: GPL-3        
 URL: https://github.com/OnofriAndreaPG/statforbiology
 BugReports: https://github.com/OnofriAndreaPG/statforbiology/issues

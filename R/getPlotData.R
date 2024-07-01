@@ -159,6 +159,7 @@ getPlotData.drc <- function(obj, xlim = NULL,
 
     retData <- data.frame(dosePts, as.data.frame(plotMat))
     colnames(retData) <- c(doseName, respName)
+    row.names(retData) <- 1:length(retData[,1])
 
     if(numAss == 1) {
       # Prepare observed points
@@ -182,9 +183,11 @@ getPlotData.drc <- function(obj, xlim = NULL,
       plotPoints <- data.frame(dose, curveid, resp)
       if(type == "average"){
         plotPoints <- aggregate(plotPoints[,3], list(plotPoints[,1], plotPoints[,2]), mean)
+        row.names(plotPoints) <- 1:length(plotPoints[,1])
       }
       plotPoints <- as.data.frame(plotPoints)
       colnames(plotPoints) <- c(doseName, dlNames$cNames, respName)
+      row.names(plotPoints) <- 1:length(plotPoints[,1])
     }
 
     returnList <- list(plotPoints = plotPoints, plotFits = retData)
@@ -197,7 +200,7 @@ getPlotData.nls <- function(obj, xlim = NULL,
                             type = c("average", "all"),...){
     fm <- obj
     type <- match.arg(type)
-    dframe <- eval(fm$data)
+    dframe <- data.frame(eval(fm$data))
     mm <- fm$m
     cc <- fm$call
     pnms <- names(mm$getPars())
@@ -223,6 +226,7 @@ getPlotData.nls <- function(obj, xlim = NULL,
       if(type == "average"){
                 y <- tapply(y, list(factor(x)), mean)
                 x <- tapply(x, list(factor(x)), mean)
+                print(y); print(x)
       }
       plotPoints <- data.frame(x = x, y = y)
       names(plotPoints) <- c(deparse(namList$x), deparse(namList$y))
@@ -238,6 +242,8 @@ getPlotData.nls <- function(obj, xlim = NULL,
     }
     step <- (xmax - xmin)/gridsize
     xseq <- seq(xmin, xmax, step)
+
+
     if (length(vnms) > 1){
       xseqDf <- expand.grid(xseq, levels(factor(cov)))
       names(xseqDf) <- as.character(namList$x, namList$cov)
@@ -245,7 +251,6 @@ getPlotData.nls <- function(obj, xlim = NULL,
       xseqDf <- data.frame(xseq)
       names(xseqDf) <- as.character(namList$x)
     }
-
 
     newData <- predict(fm, newdata = xseqDf)
 

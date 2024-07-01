@@ -1,5 +1,5 @@
-\name{plot.nls}
-\alias{plot.nls}
+\name{plotnls}
+\alias{plotnls}
 
 \title{Plotting diagnostics for an \code{nls} object}
 
@@ -8,8 +8,7 @@ This function is aimed at providing some types of plots to assess the goodness o
 }
 
 \usage{
-
-  \method{plot}{nls}(x, type = c("average", "all"),
+  plotnls(x, type = c("average", "all"),
                      xlim = NULL, gridsize = 100,
                      which = 3, ...)
 }
@@ -36,6 +35,6 @@ degradation <- read.csv("https://www.casaonofri.it/_datasets/degradation.csv")
 mod <- nls(Conc ~ A*exp(-k*Time),
                start=list(A=100, k=0.05),
                data=degradation)
-plot(mod, which = 3)
+plotnls(mod, which = 3)
 }
 

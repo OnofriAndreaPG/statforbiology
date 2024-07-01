@@ -1,4 +1,4 @@
-plot.nls <- function(x, type = c("average", "all"),
+plotnls <- function(x, type = c("average", "all"),
                      xlim = NULL, gridsize = 100,
                      which = 3, ...){
     fm <- x

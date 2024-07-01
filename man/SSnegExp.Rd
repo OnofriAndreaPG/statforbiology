@@ -31,26 +31,26 @@ These functions provide the negative exponential model (negExp.fun) with the rel
 
 \details{
   The negative exponential model is given by the following function:
-  
+
   \deqn{ f(x) = \textrm{a} \{1 -  \exp [- \exp( c x )] \} }
-  
+
   while the exponential CDF is obtained by setting a = 1:
-  
+
   \deqn{ f(x) = 1 -  \exp [- \exp( c x )] }
-  
+
   The ‘drc’ package contains also the function AR.2(), where c is replaced
   by e = 1/c. The ‘nlme’ package also contains an alternative
   parameterisation named 'SSasympOrig()', where c
-  is replaced by ϕ3 = log(c).
+  is replaced by phi3 = log(c).
   }
-  
+
 \value{
 negExp.fun and negExpDist.fun return a numeric value, while the self-starters return a list containing the nonlinear function, the self starter function and the parameter names.
 }
 
 \references{
 Ratkowsky, DA (1990) Handbook of nonlinear regression models. New York (USA): Marcel Dekker Inc.
-Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/} 
+Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/}
 }
 
 \author{Andrea Onofri}

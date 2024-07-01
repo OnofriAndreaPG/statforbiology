@@ -66,7 +66,7 @@ export(
        # JointRegr, JointRegrM,
        # stability.met, summary.met,
        # Utilities for nonlinear regression
-       getPlotData, R2nls, plot.nls, # boxcox.nls,
+       getPlotData, R2nls, plotnls, # boxcox.nls,
        # summary.nlsbc,
        pairComp, gnlht, compCoefs, #,  deviance.drc,
        compCurves, # compCurves.2,
@@ -86,7 +86,7 @@ S3method(gnlht, lme)
 S3method(gnlht, nlme)
 S3method(gnlht, drc)
 S3method(gnlht, numeric)
-S3method(plot, nls)
+S3method(gnlht, default)
 S3method(biplot, AMMIobject)
 S3method(biplot, GGEobject)
 S3method(getPlotData, drc)

@@ -22,7 +22,7 @@ CVA(dataset, groups, scale = TRUE, constraint = 3)
   \item{TOT}{matrix of total variances-covariances}
   \item{B}{matrix of 'between-groups' variances-covariances}
   \item{W}{matrix of 'within-group' variances-covariances}
-  \item{B/W}{matrix of W^{-1} B}
+  \item{B/W}{matrix of W^\{-1\} B}
   \item{eigenvalues}{vector of eigenvalues}
   \item{eigenvectors}{matrix of eigenvectors}
   \item{proportion}{a vector containing the proportion of total discriminating ability captured by each canonical variate}
