@@ -4,19 +4,25 @@
 \alias{getAgroData}
 \title{Get one of the available datasets}
 \usage{
-getAgroData(fileName, where = "https://www.casaonofri.it/_datasets/",
-                    type = "csv")
+getAgroData(
+  fileName,
+  where = "https://www.casaonofri.it/_datasets/",
+  type = "csv"
+)
 }
 \arguments{
-\item{fileName}{character: the name of the dataset (with no extension)}
-\item{where}{character: the name of the repository, containing the fileName}
-\item{type}{character: the extension of the fileName (with no dot)}
+\item{fileName}{character: the name of the file (with no extension)}
+
+\item{where}{character: the name of the web repository}
+
+\item{type}{character: the extension of the web file}
 }
 \value{
 returns a data.frame
 }
 \description{
-This function returns the dataset shown in the website or book and used to run
+This function loads and returns a dataset available in an external repository
+and stored as '.csv' or other type of text files.
 all the examples.
 }
 \examples{

@@ -6,7 +6,7 @@
 \title{Simple polynomial regression functions}
 
 \description{
-These functions provide the simple polynomial (second order) regression model (poly2), the polynomial regression model with self-starter for the \code{\link{nls}} function (NLS.poly2) and the polynomial regression function with self-starter for the \code{\link{drm}} function in the drc package (DRC.poly2).  Fitting linear functions with nonlinear least square regression is sub-optimal, but it might be useful for comparing alternative models.
+These functions provide the simple polynomial (second order) regression model (poly2), the polynomial regression model with self-starter for the \code{\link{nls}} function (NLS.poly2) and the polynomial regression function with self-starter for the \code{\link[drc]{drm}} function in the drc package (DRC.poly2).  Fitting linear functions with nonlinear least square regression is sub-optimal, but it might be useful for comparing alternative models.
 }
 
 \usage{
@@ -28,7 +28,7 @@ These functions provide the simple polynomial (second order) regression model (p
   The simple polynomial (second order) regression model is given by the following equation:
   \deqn{ f(x) = a +  b x + c x^2}
   }
-  
+
 \value{
   poly2.fun and NLS.poly2 return a numeric value, while DRC.poly2 returns a list containing the nonlinear function, the self starter function and the parameter names.
 }
@@ -36,7 +36,7 @@ These functions provide the simple polynomial (second order) regression model (p
 \references{
 Ratkowsky, DA (1990) Handbook of nonlinear regression models. New York (USA): Marcel Dekker Inc.
 
-Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/} 
+Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/}
 }
 
 \author{Andrea Onofri}
@@ -44,7 +44,7 @@ Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. 
 \examples{
 # Polynomial regression
 X <- seq(5, 50, 5)
-Y <- c(12.6, 74.1, 157.6, 225.5, 303.4, 462.8, 
+Y <- c(12.6, 74.1, 157.6, 225.5, 303.4, 462.8,
        669.9, 805.3, 964.2, 1169)
 
 model <- nls(Y ~ NLS.poly2(X, a, b, c))

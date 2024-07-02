@@ -7,7 +7,7 @@
 \title{Asymptotic functions}
 
 \description{
-These functions provide the asymptotic regression model (asymReg), the asymptotic regression function with self-starter for the \code{\link{nls}} function and the asymptotic regression function with self-starter for the \code{\link{drm}} function in the drc package. The 'DRC.SSasymp()' function provides the self-starter for drc, to fit the same function as in the 'SSasymp()' function in the 'nlme' package. The asymptotic regression model is also known as the Mitscherlich law in agriculture and as the von Bertalanffy law in fisheries research.
+These functions provide the asymptotic regression model (asymReg), the asymptotic regression function with self-starter for the \code{\link{nls}} function and the asymptotic regression function with self-starter for the \code{\link[drc]{drm}} function in the drc package. The 'DRC.SSasymp()' function provides the self-starter for drc, to fit the same function as in the 'SSasymp()' function in the 'nlme' package. The asymptotic regression model is also known as the Mitscherlich law in agriculture and as the von Bertalanffy law in fisheries research.
 }
 
 \usage{

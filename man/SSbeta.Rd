@@ -34,7 +34,7 @@ These functions provide the beta equation, a threshold model that was derived
 from the beta density function and it was adapted to describe phenomena taking place only
 within a minimum and a maximum threshold value (threshold model), for example
 to describe the germination rate (GR, i.e. the inverse of germination time)
-as a function of temperature. These functions provide the
+as a function of temperature. These functions provide the beta
 equation (beta.fun), the self-starters for the \code{\link{nls}}
 function (NLS.beta) and the self-starters for
 the \code{\link[drc]{drm}} function in the drc package (DRC.beta)

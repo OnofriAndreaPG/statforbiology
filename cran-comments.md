@@ -6,4 +6,4 @@
 
 0 errors | 0 warnings | 0 note
 
-* This is a new submission.
+* This is a re-submission of a previous version of the same statforbiology package

@@ -6,7 +6,7 @@
 \title{Exponential growth function}
 
 \description{
-  These functions provide the exponential growth equation (expoGrowth), the exponential growth equation with self-starter for the \code{\link{nls}} function and the exponential growth equation with self-starter for the \code{\link{drm}} function in the drc package.
+  These functions provide the exponential growth equation (expoGrowth), the exponential growth equation with self-starter for the \code{\link{nls}} function and the exponential growth equation with self-starter for the \code{\link[drc]{drm}} function in the drc package.
 }
 
 \usage{

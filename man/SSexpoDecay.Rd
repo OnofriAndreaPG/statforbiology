@@ -6,7 +6,7 @@
 \title{Exponential decay function}
 
 \description{
-  These functions provide the exponential decay function (expoDecay), the exponential decay function with self-starter for the \code{\link{nls}} function and the exponential decay function with self-starter for the \code{\link{drm}} function in the drc package.
+  These functions provide the exponential decay function (expoDecay), the exponential decay function with self-starter for the \code{\link{nls}} function and the exponential decay function with self-starter for the \code{\link[drc]{drm}} function in the drc package.
 }
 
 \usage{

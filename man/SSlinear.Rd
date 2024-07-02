@@ -7,7 +7,7 @@
 \title{Simple linear regression functions}
 
 \description{
-These functions provide the simple linear regression model (linear), the linear regression model with self-starter for the \code{\link{nls}} function (NLS.linear) and the simple linear regression function with self-starter for the \code{\link{drm}} function in the drc package (DRC.linear). For the 'nls' function, we also provide function and self starter for the simple linear regression through origin (NLS.linearOrigin). Obviously, fitting linear functions with nonlinear least square regression is sub-optimal, but it might be useful for comparing alternative models.
+These functions provide the simple linear regression model (linear), the linear regression model with self-starter for the \code{\link{nls}} function (NLS.linear) and the simple linear regression function with self-starter for the \code{\link[drc]{drm}} function in the drc package (DRC.linear). For the 'nls' function, we also provide function and self starter for the simple linear regression through origin (NLS.linearOrigin). Obviously, fitting linear functions with nonlinear least square regression is sub-optimal, but it might be useful for comparing alternative models.
 }
 
 \usage{
@@ -29,7 +29,7 @@ These functions provide the simple linear regression model (linear), the linear 
   The simple linear regression model is given by the following equation:
   \deqn{ f(x) = a +  b x }
   }
-  
+
 \value{
   linear.fun, NLS.linear and NLS.linearOrigin return a numeric value, while DRC.linear returns a list containing the nonlinear function, the self starter function and the parameter names.
 }
@@ -37,7 +37,7 @@ These functions provide the simple linear regression model (linear), the linear 
 \references{
 Ratkowsky, DA (1990) Handbook of nonlinear regression models. New York (USA): Marcel Dekker Inc.
 
-Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/} 
+Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. See: \url{https://www.statforbiology.com/2020/stat_nls_usefulfunctions/}
 }
 
 \author{Andrea Onofri}
