@@ -226,7 +226,7 @@ getPlotData.nls <- function(obj, xlim = NULL,
       if(type == "average"){
                 y <- tapply(y, list(factor(x)), mean)
                 x <- tapply(x, list(factor(x)), mean)
-                print(y); print(x)
+                # print(y); print(x)
       }
       plotPoints <- data.frame(x = x, y = y)
       names(plotPoints) <- c(deparse(namList$x), deparse(namList$y))

@@ -16,18 +16,34 @@ plotnls <- function(x, type = c("average", "all"),
     stop("'which' must be in 1:3")
 
   if(which == 3){
-    df <- eval(fm$data)
-    mm <- fm$m
-    cc <- fm$call
-    pnms <- names(mm$getPars())
-    form <- cc$formula
-    rhsnms <- all.vars(form[[3]])
-    vnms <- rhsnms[!(rhsnms %in% pnms)]
-    if (length(vnms) > 1)
-            stop("plot.nls not yet implemented for >1 covariate")
-    namList <- list(x = as.name(vnms), y = form[[2]])
-    x <- df[,as.character(namList$x)]
-    y <- df[,as.character(namList$y)]
+    if(!inherits(fm, "nlsbc")){
+      dframe <- eval(fm$data)
+      mm <- fm$m
+      cc <- fm$call
+      pnms <- names(mm$getPars())
+      form <- cc$formula
+      rhsnms <- all.vars(form[[3]])
+      vnms <- rhsnms[!(rhsnms %in% pnms)]
+      if (length(vnms) > 1)
+            stop("plotnls not yet implemented for > 1 covariate")
+      namList <- list(x = as.name(vnms), y = form[[2]])
+      x <- dframe[,as.character(namList$x)]
+      y <- dframe[,as.character(namList$y)]
+    } else {
+      dframe <- eval(fm$data)
+      mm <- fm$m
+      cc <- fm$oldCall
+      pnms <- names(mm$getPars())
+      form <- cc$formula
+      rhsnms <- all.vars(form[[3]])
+      vnms <- rhsnms[!(rhsnms %in% pnms)]
+      if (length(vnms) > 2)
+            stop("plotnls not yet implemented for > 1 covariate")
+        namList <- list(x = as.name(vnms), y = form[[2]])
+      x <- dframe[,as.character(namList$x)]
+      y <- fm$transy
+
+    }
 
     if(type == "average"){
                 y <- tapply(y, list(factor(x)), mean)
@@ -45,10 +61,16 @@ plotnls <- function(x, type = c("average", "all"),
     xseq <- seq(xmin, xmax, step)
     xseqDf <- data.frame(xseq)
     names(xseqDf) <- as.character(namList$x)
-    newData <- predict(fm, newdata = xseqDf)
 
-    plot(y ~ x, data = df, ...)
-    points(newData ~ xseq, type = "l", ...)
+    if(!inherits(fm, "nlsbc")){
+      newData <- predict(fm, newdata = xseqDf)
+      plot(y ~ x, data = dframe, ...)
+      points(newData ~ xseq, type = "l", ...)
+    } else {
+      stop("Not yet implemented for nlsbc objects")
+    }
+
+
   } else {
     #Get values
     x <- fm

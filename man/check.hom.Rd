@@ -10,7 +10,6 @@ This function takes a linear model object as an argument and checks whether the 
 \usage{
 check.hom(obj, var, alternative)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{obj}{a linear model object fitted with lm()}
   \item{var}{a vector containing a stratification variable. If missing, the fitted values from obj are taken as a covariate}
@@ -18,8 +17,6 @@ check.hom(obj, var, alternative)
 }
 \details{The function fits a gls with same structure as the input model, together with a heteroscedastic gls, where residuals are allowed to be heteroscedastic, according to the 'alternative' argument. The two models are compared by a LRT}
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
 \item{LRT}{the value of LRT}
 \item{LRT}{the P-value of LRT}
 \item{aovtable}{a summary table for the LRT}

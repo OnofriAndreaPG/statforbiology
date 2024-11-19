@@ -1,10 +1,10 @@
 Package: statforbiology
 Type: Package
-Title: Tools for Data Analyses in Biology 
+Title: Data Analyses in Agriculture and Biology 
 Version: 0.9.9
-Author: Andrea Onofri <andrea.onofri@unipg.it>
-Maintainer: Andrea Onofri <andrea.onofri@unipg.it>
-Description: It is associated to the blog 'Fixing the bridge between biologists and statisticians" and contains several tools for nonlinear regression analyses and general data analysis in biology and agriculture. Several datasets are also included for practicing and teaching purposes.
+Authors@R: c(person("Andrea", "Onofri", role = c("aut", "cre"), 
+    email = "andrea.onofri@unipg.it"))
+Description: Contains several tools for nonlinear regression analyses and general data analysis in biology and agriculture. Contains also datasets for practicing and teaching purposes. Supports the blog: Onofri (2024) "Fixing the bridge between biologists and statisticians" <https://www.statforbiology.com> and the book: Onofri (2024) "Experimental Methods in Agriculture" <https://www.statforbiology.com/_statbookeng/>. The blog is a collection of short articles aimed at improving the efficiency of communication between biologists and statisticians, as pointed out in Kozak (2016) <doi:10.1590/0103-9016-2015-0399>, spreading a better awareness of the potential usefulness, beauty and limitations of biostatistic.
 License: GPL-3        
 URL: https://github.com/OnofriAndreaPG/statforbiology
 BugReports: https://github.com/OnofriAndreaPG/statforbiology/issues

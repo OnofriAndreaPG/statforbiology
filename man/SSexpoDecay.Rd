@@ -43,7 +43,6 @@ Onofri, A. (2020). A collection of self-starters for nonlinear regression in R. 
 \note{DRC.expoDecay is for use with the function \code{\link[drc]{drm}}.}
 
 \examples{
-rm(list=ls())
 data("degradation")
 model <- drm(Conc ~ Time, fct = DRC.expoDecay(),
              data = degradation)

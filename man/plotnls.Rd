@@ -22,8 +22,11 @@ This function is aimed at providing some types of plots to assess the goodness o
   \item{...}{additional graphical arguments}
 }
 
+\value{No return value, it produces a plot}
+
 \details{
-  It mimicks the behaviour of the function plot.lm()
+  It mimicks the behaviour of the function plot.lm(). It has been named 'plotnls' in order to avoid
+  conflicts with the 'plot.nls' method in the 'nlme' library
 }
 
 \author{
@@ -31,6 +34,7 @@ This function is aimed at providing some types of plots to assess the goodness o
 }
 
 \examples{
+library(statforbiology)
 degradation <- read.csv("https://www.casaonofri.it/_datasets/degradation.csv")
 mod <- nls(Conc ~ A*exp(-k*Time),
                start=list(A=100, k=0.05),

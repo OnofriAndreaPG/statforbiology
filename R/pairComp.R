@@ -15,8 +15,7 @@ pairComp <- function(parm, vcovMat, nams = NULL, dfr = NULL, adjust = "none",
     # used elsewhere in the package
 
     if(!inherits(obj, "glht")){
-      print("this function is only implemented for glht objects")
-      stop()
+      stop("this function is only implemented for glht objects")
     }
     gh <- summary(obj, multcomp::adjusted(type = adjust))
     p.logic <- as.vector(gh$test$pvalues)

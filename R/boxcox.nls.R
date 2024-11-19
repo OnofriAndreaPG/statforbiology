@@ -21,7 +21,7 @@ eps = 1/50, bcAdd = 0, level = 0.95, xlab = expression(lambda), ylab = "log-like
   }
 
   # Retrieving objects from model call
-  df <- eval(object$data)
+  dframe <- eval(object$data)
   mm <- object$m
   cc <- object$call
   pnms <- names(mm$getPars())
@@ -29,8 +29,8 @@ eps = 1/50, bcAdd = 0, level = 0.95, xlab = expression(lambda), ylab = "log-like
   rhsnms <- all.vars(form[[3]])
   vnms <- rhsnms[!(rhsnms %in% pnms)]
   namList <- list(x = as.name(vnms), y = form[[2]])
-  x <- df[,as.character(namList$x)]
-  y <- df[,as.character(namList$y)]
+  x <- dframe[,as.character(namList$x)]
+  y <- dframe[,as.character(namList$y)]
   oldFormula <- as.character(formula(object))[[3]]
 
   # Re-fitting the model with TBS approach (recursive)
@@ -39,10 +39,10 @@ eps = 1/50, bcAdd = 0, level = 0.95, xlab = expression(lambda), ylab = "log-like
   rss <- rep(NA, lenlam)
   k <- rep(NA, lenlam)
   for (i in 1:lenlam) {
-    df$newRes <- bfFct(y, lambda[i], eps, bcAdd)
+    dframe$newRes <- bfFct(y, lambda[i], eps, bcAdd)
     newFormula <- newFct(oldFormula, lambda[i], eps, bcAdd)
-    nlsTemp <- try(nls(formula = newRes ~ eval(parse(text = newFormula), df),
-                  data = df,
+    nlsTemp <- try(nls(formula = newRes ~ eval(parse(text = newFormula), dframe),
+                  data = dframe,
                   start = coef(object)), silent = TRUE)
     if (!inherits(nlsTemp, "try-error")) {
       # Calculate log-likelihood
@@ -82,13 +82,16 @@ eps = 1/50, bcAdd = 0, level = 0.95, xlab = expression(lambda), ylab = "log-like
   }
 
   # Refit model based on best lambda
-  df$newRes <- bfFct(y, lv, eps, bcAdd)
+  dframe$newRes <- bfFct(y, lv, eps, bcAdd)
   newFormula <- newFct(oldFormula, lv, eps, bcAdd)
-  retFit <- try(nls(formula = newRes ~ eval(parse(text = newFormula), df),
-                  data = df,
+  retFit <- try(nls(formula = newRes ~ eval(parse(text = newFormula), dframe),
+                  data = dframe,
                   start = coef(object)), silent = TRUE)
   retFit$lambda <- list(lambda = lv, ci = ci, loglik = llv)
   class(retFit) <- c("nlsbc", "nls")
+  retFit$data <- object$data
+  retFit$transy <- dframe$newRes
+  retFit$oldCall <- object$call
   invisible(retFit)
   # return(returnList)
 }
