@@ -115,7 +115,7 @@ LL2.init <- function(mCall, LHS, data, ...) {
   d <- 1
   ## Linear regression on pseudo y values
   pseudoY <- log((d-y)/(y+0.00001))
-  coefs <- coef( lm(pseudoY ~ log(x1), subset = c(x > 0)))
+  coefs <- coef( lm(pseudoY ~ log(x), subset = c(x > 0)))
   k <- coefs[1]; b <- - coefs[2]
   e <- exp(k/b)
   value <- c(b,e)

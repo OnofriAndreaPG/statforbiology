@@ -7,7 +7,8 @@
 getAgroData(
   fileName,
   where = "https://www.casaonofri.it/_datasets/",
-  type = "csv"
+  type = "csv",
+  fileEncoding = "UTF-8-BOM"
 )
 }
 \arguments{
@@ -16,6 +17,8 @@ getAgroData(
 \item{where}{character: the name of the web repository}
 
 \item{type}{character: the extension of the web file}
+
+\item{fileEncoding}{character: declares the encoding used on a file, deafults to "UTF-8-BOM"}
 }
 \value{
 returns a data.frame
