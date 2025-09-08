@@ -1,6 +1,6 @@
 Package: statforbiology
 Version: 1.0.2
-Date: 2025-01-06
+Date: 2025-07-09
 Type: Package
 Title: Data Analyses in Agriculture and Biology 
 Authors@R: c(person("Andrea", "Onofri", role = c("aut", "cre"), 
