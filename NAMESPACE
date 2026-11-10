@@ -61,8 +61,7 @@ export(
        check.hom, # anova.aovlist,
        # utilities for METs
        AMMI, GGE, CVA,
-       # biplot.AMMIobject, biplot.GGEobject,
-       # biplot.polygon,
+       biplot.polygonView,
        # JointRegr, JointRegrM,
        # stability.met, summary.met,
        # Utilities for nonlinear regression
