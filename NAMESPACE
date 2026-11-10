@@ -24,9 +24,9 @@ importFrom("stats", "aggregate", "predict",
 #            "qqline", "qqnorm", "residuals",
 #            , "weights"
           )
-importFrom("grDevices", "dev.cur", "extendrange")
+importFrom("grDevices", "dev.cur", "extendrange", "chull")
 importFrom("graphics", "abline", "curve", "par", "points", "segments",
-                "text")
+                "text", "polygon")
 importFrom("methods", "is")
 
 export(
